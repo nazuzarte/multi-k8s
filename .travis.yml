@@ -22,3 +22,16 @@ after_success:
   - docker push nazuzarte/multi-nginx
   - docker push nazuzarte/multi-server
   - docker push nazuzarte/multi-worker
+
+  #added for deploy on aws
+deploy:
+  provider: elasticbeanstalk
+  region: 'eu-west-2'
+  app: 'multi-docker'
+  env: 'Multidocker-env'
+  bucket_name: "elasticbeanstalk-eu-west-2-149392626186"
+  bucket_path: "docker-multi"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: "$AWS_SECRET_KEY"
