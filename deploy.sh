@@ -1,7 +1,7 @@
 #build the images
-docker build -t nzuzarte/multi-client:latest -t nazuzarte/multi-client:$SHA -f ./client/Dockerfile ./client
-docker build -t nzuzarte/multi-server:latest -t nazuzarte/multi-server:$SHA -f ./server/Dockerfile ./server
-docker build -t nzuzarte/multi-worker:latest -t nazuzarte/multi-worker:$SHA -f ./worker/Dockerfile ./worker
+docker build -t nazuzarte/multi-client:latest -t nazuzarte/multi-client:$SHA -f ./client/Dockerfile ./client
+docker build -t nazuzarte/multi-server:latest -t nazuzarte/multi-server:$SHA -f ./server/Dockerfile ./server
+docker build -t nazuzarte/multi-worker:latest -t nazuzarte/multi-worker:$SHA -f ./worker/Dockerfile ./worker
 #push specific tagged images to docker hub
 docker push nazuzarte/multi-client:latest
 docker push nazuzarte/multi-server:latest
